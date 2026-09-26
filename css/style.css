@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-color: #f8f5ff;
+    color: #17175c;
+}
+
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background-color: #dfe3ff;
+    border-bottom: 3px solid #6b73d6;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #17175c;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #cdd9ff;
+
+    border-bottom: 3px solid #6b73d6;
+}
+
+.hero-content {
+    max-width: 650px;
+    padding: 50px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-size: 65px;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+
+/* Note */
+
+.hero-note {
+    width: 330px;
+
+    margin: 40px auto 0;
+    padding: 20px;
+
+    background-color: #fff5c7;
+
+    border: 2px solid #17175c;
+
+    transform: rotate(-2deg);
+}
+
+.hero-note h3 {
+    margin-top: 0;
+}
+
+
+/* Home Buttons */
+
+.home-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px;
+}
+
+.primary-button,
+.secondary-button {
+    width: 300px;
+
+    margin: 8px;
+    padding: 16px;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    border: 2px solid #17175c;
+}
+
+.primary-button {
+    background-color: #ff8fc4;
+    color: #17175c;
+}
+
+.primary-button:hover {
+    background-color: #ffacd2;
+}
+
+.secondary-button {
+    background-color: #e3e7ff;
+    color: #17175c;
+}
+
+.secondary-button:hover {
+    background-color: #ccd3ff;
+}
+
+.quote {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #17175c;
+    color: white;
+}
