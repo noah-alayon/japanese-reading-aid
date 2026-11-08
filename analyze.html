@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page settings and the single font used throughout the website. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze | Japanese Reading Aide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Java -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/analyze.js" defer></script>
+</head>
+<body>
+    <!-- Reuse the same navigation as the homepage. -->
+    <header class="site-header">
+        <div class="container nav-bar">
+            <a class="brand" href="index.html">✿ Japanese Reading Aide</a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="analyze.html" aria-current="page">Analyze</a>
+
+
+                <a href="flashcards.html" title="Study page not included yet">Study</a>
+                <a href="readings.html" title="My Readings page not included yet">My Readings</a>
+                <a href="about.html">About</a>
+            </nav>
+            <!-- Switch between light and dark mode on either page. -->
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
+        </div>
+    </header>
+
+    <!-- React inserts the upload form or the analysis results here. -->
+    <main class="analyze-main container">
+        <div id="analyze-root"></div>
+    </main>
+
+    <footer><p>Japanese Reading Aide · Read More. Understand More.</p></footer>
+</body>
+</html>
