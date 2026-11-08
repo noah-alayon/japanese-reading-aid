@@ -1,1 +1,1 @@
-# japanese-reading-aid
+# Japanese-Reading-Aide
