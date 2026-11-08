@@ -1,144 +1,201 @@
-* {
-    box-sizing: border-box;
+/* Japanese Reading Aide — style sheet */
+:root {
+    /* Reusable colors: change a value here to update the whole design. */
+    --navy: #08095f;
+    --lavender: #eae7fa;
+    --pink: #fc83be;
+    --border: #acb7f6;
 }
 
+/* Apply border-box sizing so padding does not unexpectedly increase widths. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+/* Base font and colors used throughout the page. */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f5ff;
-    color: #17175c;
+    font-family: 'Nunito', sans-serif;
+    color: var(--navy);
+    background: #eae7fa;
+}
+button, a { font: inherit; }
+a { color: inherit; }
+/* Keep content centered and prevent it from becoming too wide. */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* NAVIGATION: Site title and page links. */
+.site-header { background: white; border-bottom: 1px solid var(--border); }
+.nav-bar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { font-size: 19px; font-weight: 800; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 22px; }
+nav a { text-decoration: none; font-size: 15px; font-weight: 700; }
+nav a:hover, nav a.active { color: #b82879; }
+
+/* HERO: Two columns on large screens (text on left, preview on right). */
+.hero { background: var(--lavender); padding: 100px 0; }
+.hero-layout { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 60px; }
+.eyebrow { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; color: #777ab0; }
+h1 { font-size: clamp(38px, 4.5vw, 60px); line-height: 1.13; margin: 16px 0 22px; }
+h1 span { color: #e64e99; }
+.intro { font-size: 18px; line-height: 1.7; max-width: 490px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.button { display: inline-block; padding: 13px 24px; border-radius: 9px; font-weight: 800; text-decoration: none; border: 1px solid var(--navy); transition: transform .2s; }
+.button:hover { transform: translateY(-2px); }
+.primary { background: var(--pink); }
+.secondary { background: white; }
+
+/* READING PREVIEW: Example sentence and interactive word card. */
+.preview-card { background: white; padding: 28px; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 12px 28px #24265e12; }
+.preview-heading { margin: 0 0 20px; font-weight: 800; }
+.japanese-sentence { font-size: 22px; line-height: 2; }
+.highlight { background: #fff0ad; border-radius: 4px; padding: 2px 4px; }
+.word-card { background: #f8f7ff; border-radius: 10px; padding: 16px; margin-top: 20px; }
+.word-card strong { font-size: 22px; }
+.word-card p { margin: 7px 0 12px; }
+.word-card button { cursor: pointer; border: 1px solid var(--border); background: white; color: var(--navy); border-radius: 7px; padding: 8px 12px; font-weight: 700; }
+
+/* FEATURE CARDS: Three columns on desktop. */
+.features { padding: 80px 0; text-align: center; }
+h2 { font-size: 32px; margin: 0 0 28px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.feature-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 28px 20px; }
+.feature-icon { font-size: 28px; }
+.feature-card h3 { margin: 16px 0 8px; }
+.feature-card p { line-height: 1.6; margin: 0; }
+
+/* FINAL CALL TO ACTION AND FOOTER */
+.closing { background: #eae7fa; text-align: center; padding: 65px 0; }
+.closing h2 { margin-bottom: 8px; }
+.closing p { margin-bottom: 24px; }
+footer { text-align: center; background: var(--navy); color: white; padding: 20px; font-size: 14px; }
+
+/* MOBILE LAYOUT: Stack columns and cards on narrow screens. */
+@media (max-width: 800px) {
+    .nav-bar { flex-direction: column; padding: 20px 0; }
+    nav { justify-content: center; gap: 12px 18px; }
+    .hero { padding: 60px 0; }
+    .hero-layout { grid-template-columns: 1fr; gap: 35px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .features { padding: 55px 0; }
 }
 
+/* ANALYZE PAGE: Simple pastel layout matching the homepage. */
+.analyze-main { min-height: 74vh; padding: 54px 0 85px; }
+.analyze-main h1 { font-size: clamp(29px, 4vw, 39px); margin: 0 0 12px; }
+.analyze-intro { font-size: 17px; line-height: 1.6; margin-bottom: 27px; }
+.analyze-panel, .stat-card, .words-panel { background: white; border: 2px solid var(--border); border-radius: 14px; padding: 25px; }
+.input-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.input-tabs button { border: 1px solid var(--border); background: #f6f5ff; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 800; color: var(--navy); }
+.input-tabs button.selected { background: #acb7f6; }
+.drop-zone { border: 2px dashed #aab7f5; border-radius: 12px; padding: 38px 20px; text-align: center; background: #fafaff; }
+.drop-zone.dragging { background: #ecebff; }
+.drop-zone p { margin: 7px 0 14px; }
+.file-label { display: inline-block; background: #acb7f6; border-radius: 8px; padding: 11px 22px; font-weight: 800; cursor: pointer; }
+.file-label input { display: none; }
+.small-note { font-size: 13px; color: #5a5e8b; }
+.text-input { width: 100%; min-height: 230px; resize: vertical; padding: 16px; font: inherit; border: 2px solid var(--border); border-radius: 10px; }
+.analyze-actions { display: flex; gap: 12px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+.analyze-actions button, .save-button, .back-button, .add-word-button { font: inherit; font-weight: 800; cursor: pointer; border: 1px solid var(--navy); border-radius: 9px; padding: 12px 22px; }
+.analyze-actions button, .save-button, .add-word-button { background: var(--pink); color: var(--navy); }
+.back-button { background: white; color: var(--navy); }
+.analyze-actions button:disabled { opacity: .5; cursor: not-allowed; }
+.status-message { margin-top: 15px; font-weight: 700; }
+.error-message { color: #a32349; }
+.result-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 25px; }
+.result-header h1 { margin-bottom: 5px; }
+.result-header p { margin: 4px 0; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+.stat-card h2 { font-size: 21px; margin: 0 0 14px; }
+.stat-value { font-size: 43px; font-weight: 800; color: #328557; }
+.progress-track { background: #ececff; border-radius: 20px; height: 15px; overflow: hidden; margin: 13px 0; }
+.progress-fill { background: #58b47c; height: 100%; }
+.stat-line { display: flex; justify-content: space-between; margin: 8px 0; }
+.words-panel h2 { font-size: 24px; margin: 0 0 14px; }
+.table-scroll { overflow-x: auto; }
+.words-table { width: 100%; border-collapse: collapse; text-align: left; }
+.words-table th { background: #e7e9ff; }
+.words-table th, .words-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+.words-table td:first-child { font-size: 18px; font-weight: 800; }
+.add-word-button { font-size: 13px; padding: 7px 12px; }
+.add-word-button:disabled { background: #e9f7ec; border-color: #8fbe9a; cursor: default; }
+.sample-note { background: #fff7dd; padding: 12px 16px; border-radius: 9px; margin: 20px 0; line-height: 1.5; }
+.preview-text { white-space: pre-wrap; overflow-wrap: anywhere; background: #f9f8ff; padding: 16px; border-radius: 9px; line-height: 2; }
+.preview-text mark { background: #fff0a8; padding: 2px; border-radius: 3px; }
+@media (max-width: 720px) { .stats-grid { grid-template-columns: 1fr; } .analyze-main { padding-top: 35px; } .result-header { align-items: flex-start; } }
 
-/* Navigation */
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+/* DARK MODE TOGGLE: Shared by Home and Analyze pages. */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #dfe3ff;
-    border-bottom: 3px solid #6b73d6;
-}
-
-.logo {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: #17175c;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-
-/* Hero */
-
-.hero {
-    min-height: 500px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #cdd9ff;
-    border-bottom: 3px solid #6b73d6;
-}
-
-.hero-content {
-    max-width: 650px;
-    padding: 50px;
-}
-
-.hero h1 {
-    margin: 0;
-    font-size: 65px;
-    text-transform: uppercase;
-}
-
-.hero h2 {
+    padding: 0;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--lavender);
+    color: var(--navy);
+    font-weight: 800;
+    cursor: pointer;
     font-size: 24px;
-    font-weight: normal;
+    line-height: 1;
+}
+.theme-icon { display: block; }
+.theme-toggle:hover { filter: brightness(.95); }
+.theme-toggle:focus-visible { outline: 3px solid #cf74a5; outline-offset: 3px; }
+
+/* Changing variables updates the main accent colors without duplicating rules. */
+body.dark-mode {
+    --navy: #e9eaff;
+    --lavender: #20264a;
+    --pink: #fc83be;
+    --border: #505a86;
+    color: #e9eaff;
+    background: #12172e;
+}
+body.dark-mode .site-header,
+body.dark-mode .preview-card,
+body.dark-mode .feature-card,
+body.dark-mode .analyze-panel,
+body.dark-mode .stat-card,
+body.dark-mode .words-panel { background: #1c2342; }
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active { color: #fc83be; }
+body.dark-mode .eyebrow,
+body.dark-mode .small-note { color: #c3c8ef; }
+body.dark-mode h1 span { color: #fc83be; }
+body.dark-mode .word-card,
+body.dark-mode .preview-text,
+body.dark-mode .input-tabs button,
+body.dark-mode .drop-zone,
+body.dark-mode .text-input { background: #293253; color: #e9eaff; }
+body.dark-mode .word-card button,
+body.dark-mode .secondary,
+body.dark-mode .back-button { background: #333d65; color: #e9eaff; }
+body.dark-mode .primary,
+body.dark-mode .save-button,
+body.dark-mode .add-word-button,
+body.dark-mode .analyze-actions button { color: #171735; border-color: #171735; }
+body.dark-mode .closing { background: #392b4b; }
+body.dark-mode footer { background: #0d1126; }
+body.dark-mode .highlight,
+body.dark-mode .preview-text mark { background: #726036; color: #fff5d9; }
+body.dark-mode .input-tabs button.selected,
+body.dark-mode .file-label { background: #acb7f6; color: #10162d; }
+body.dark-mode .drop-zone.dragging { background: #35416e; }
+body.dark-mode .stat-value { color: #86dba8; }
+body.dark-mode .progress-track { background: #343d63; }
+body.dark-mode .words-table th { background: #303a63; }
+body.dark-mode .sample-note { background: #433a2b; color: #ffe9b4; }
+body.dark-mode .error-message { color: #ff9db0; }
+body.dark-mode .add-word-button:disabled { background: #315442; color: #c8f4d7; border-color: #52876a; }
+@media (max-width: 800px) {
+    .theme-toggle { margin: 0 auto 12px; }
 }
 
-.hero p {
-    font-size: 18px;
-}
-
-
-/* Note */
-
-.hero-note {
-    width: 330px;
-    margin: 40px auto 0;
-    padding: 20px;
-    background-color: #fff5c7;
-    border: 2px solid #17175c;
-    transform: rotate(-2deg);
-}
-
-.hero-note h3 {
-    margin-top: 0;
-}
-
-
-/* Home Buttons */
-
-.home-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px;
-}
-
-.primary-button,
-.secondary-button {
-    width: 300px;
-    margin: 8px;
-    padding: 16px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border: 2px solid #17175c;
-}
-
-.primary-button {
-    background-color: #ff8fc4;
-    color: #17175c;
-}
-
-.primary-button:hover {
-    background-color: #ffacd2;
-}
-
-.secondary-button {
-    background-color: #e3e7ff;
-    color: #17175c;
-}
-
-.secondary-button:hover {
-    background-color: #ccd3ff;
-}
-
-.quote {
-    margin-top: 30px;
-    font-style: italic;
-}
-
-
-/* Footer */
-
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #17175c;
-    color: white;
-}
+/* Keep the exact prototype pink for every primary action in both themes. */
+body.dark-mode .primary,
+body.dark-mode .save-button,
+body.dark-mode .add-word-button:not(:disabled),
+body.dark-mode .analyze-actions button:not(:disabled) { background-color: #fc83be; }
