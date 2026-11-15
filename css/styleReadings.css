@@ -1,0 +1,154 @@
+
+
+.readings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #dd74de;
+    box-shadow: 0 2px 4px #17175c;
+    padding: 10px 20px;
+    margin: 100px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.heading-space {
+    line-height: 5px;
+}
+
+.readings-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.item {
+    text-align: center;
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+}
+
+.item p {
+    font-size: 14px;
+}
+
+.readings-item {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+
+.readings-item.two {
+    background-color: rgba(242, 140, 225, 0.305);
+    border-radius: 10px;
+}
+
+
+.readings-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.readings-top input {
+    padding: 10px;
+    border: 2px solid #dd74de;
+    width: 300px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.button-one {
+    background-color: transparent;
+    color: rgb(22, 22, 98);
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-one:hover {
+    background-color: #ffacd2;
+}
+
+
+.button-one.two {
+    background-color: rgb(217, 167, 176);
+}
+
+.button-three {
+    display: inline-block;
+}
+
+
+
+.button-one.two:hover {
+    background-color: #ffacd2;
+}
+
+.button-three {
+    background-color: transparent;
+    color: darkblue;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (max-width: 828px) {
+    .readings {
+        margin: 50px;
+        padding: 5px 10px;
+    }
+
+    .readings-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .buttons-container {
+        justify-content: flex-start;
+    }
+
+    .readings-item {
+        height: 100px;
+    }
+    .item {
+        text-align: center;
+        height: 80px;
+    }
+
+    .button-three {
+        text-decoration: underline;
+        line-height: 30px;
+    }
+
+    .readings-top input {
+        width: 100%;
+    }
+
+}
+

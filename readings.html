@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japanese Reading Aid</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleReadings.css">
 </head>
 <body>
-<header>
+    <header>
         <nav class="navbar">
             <div class="logo">
                 Japanese Reading Aid
@@ -23,7 +24,88 @@
         </nav>
     </header>
 
-    <nav>
+    <main>
+        <header>
+            <div class="heading-space">
+            <h1>My Readings</h1>
+            <p>Find and organize your readings</p>
+            </div>
+        </header>
+
+        <section class="readings">
+            <div class="readings-top">
+                <div>
+                <input type="text" placeholder="Search...">
+                </div>
+                <div class="buttons-container">
+                    <div class="button-one">
+                        <p>Sort By</p>
+                    </div>
+                    <div class="button-one">
+                        <p>Favorite</p>
+                    </div>
+                    <div class="button-one two">
+                        <p>+ add<p>
+                    </div>
+                </div>
+            </div>
+        <div class="readings-flex">
+            <div class="readings-item head">
+                <div class="item">
+                    <h4>Reading</h4>
+                </div>
+                <div class="item">
+                    <h4>Date Added</h4>
+                </div>
+                <div class="item">
+                    <h4>Status</h4>
+                </div>
+                <div class="item">
+                    <h4>Favorite</h4>
+                </div>
+                <div class="item">
+                    <h4>Actions</h4>
+                </div>
+            </div>
+            <div class="readings-item two">
+                <div class="item">
+                    <p>reading.txt</p>
+                </div>
+                <div class="item">
+                    <p>11-11-26</p>
+                </div>
+                <div class="item">
+                    <p>Not Complete</p>
+                </div>
+                <div class="item">
+                    <p>☆</p>
+                </div>
+                <div class="item">
+                    <p><span class="button-three">Edit</span> | <span class="button-three">Delete</span></p>
+                </div>
+            </div>
+            <div class="readings-item two">
+                <div class="item">
+                    <p>moviescript.txt</p>
+                </div>
+                <div class="item">
+                    <p>10-11-26</p>
+                </div>
+                <div class="item">
+                    <p>Not Complete</p>
+                </div>
+                <div class="item">
+                    <p>☆</p>
+                </div>
+                <div class="item">
+                    <p><span class="button-three">Edit</span> | <span class="button-three">Delete</span></p>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+    </main>
         
 
 </body>
