@@ -1,0 +1,22 @@
+body {
+    background-color: #EAE7FA;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 0 16px;
+    color: #08095F;
+    font-family: "Arial Rounded MT Bold";
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+    padding: 0;
+}
