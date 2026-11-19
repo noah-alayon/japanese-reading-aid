@@ -20,3 +20,32 @@ nav {
     gap: 16px;
     padding: 0;
 }
+
+main {
+    margin: 0 16px;
+}
+
+#header {
+    color: #08095F;
+    font-family: "Arial Rounded MT Bold";
+    font-weight: bold;
+    margin-bottom: 36px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-width: 100%;
+    gap: 32px;
+}
+
+.card {
+    border: solid 2px #ACB7F6;
+    background-color: #FFFFFF;
+    padding: 0 8px;
+    color: #08095F;
+    font-family: "Arial Rounded MT Bold";
+    padding: 0 16px 32px;
+    border-radius: 16px;
+}
