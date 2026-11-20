@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="css/styleReadings.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                Japanese Reading Aid
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
+     <header class="site-header">
+        <div class="container nav-bar">
+            <a class="brand" href="index.html">✿ Japanese Reading Aide</a>
+            <nav aria-label="Main navigation">
+                <a class="active" href="index.html" aria-current="page">Home</a>
                 <a href="analyze.html">Analyze</a>
-                <a href="flashcards.html">Study</a>
-                <a href="readings.html">My Readings</a>
+
+
+                <a href="flashcards.html" title="Study page not included yet">Study</a>
+                <a href="readings.html" title="My Readings page not included yet">My Readings</a>
                 <a href="about.html">About</a>
-            </div>
-        </nav>
+            </nav>
+            <!-- Switch between light and dark mode on either page. -->
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
+        </div>
     </header>
 
     <main>
@@ -106,7 +108,8 @@
 
 
     </main>
-        
-
+    <footer>
+        <p>Japanese Reading Aide · Read More. Understand More.</p>
+    </footer>
 </body>
 </html>

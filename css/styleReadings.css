@@ -8,7 +8,7 @@
     border: 2px solid #dd74de;
     box-shadow: 0 2px 4px #17175c;
     padding: 10px 20px;
-    margin: 100px;
+    margin: 55px;
     border-radius: 10px;
     background-color: #ffffff;
 }
@@ -67,7 +67,7 @@
 
 .readings-top input {
     padding: 10px;
-    border: 2px solid #dd74de;
+    border: 2px solid #acb7f6;
     width: 300px;
     border-radius: 5px;
     font-size: 16px;
