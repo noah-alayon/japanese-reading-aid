@@ -1,104 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Page information, browser settings, and linked files -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Japanese Reading Aide helps you read Japanese and learn new vocabulary.">
-    <title>Japanese Reading Aide | Home</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- React through JavaScript -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
-    <script src="js/theme.js" defer></script>
-    <script src="js/app.js" defer></script>
-</head>
-<body>
-    <!-- HEADER: Website name and links to other pages -->
-    <header class="site-header">
-        <div class="container nav-bar">
-            <a class="brand" href="index.html">✿ Japanese Reading Aide</a>
-            <nav aria-label="Main navigation">
-                <a class="active" href="index.html" aria-current="page">Home</a>
-                <a href="analyze.html">Analyze</a>
-
-
-                <a href="flashcards.html" title="Study page not included yet">Study</a>
-                <a href="readings.html" title="My Readings page not included yet">My Readings</a>
-                <a href="about.html">About</a>
-            </nav>
-            <!-- Switch between light and dark mode on either page. -->
-            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
-        </div>
-    </header>
-
-    <!-- MAIN: All visible homepage content -->
-    <main>
-        <!-- HERO: Main introduction and reading example -->
-        <section class="hero">
-            <div class="container hero-layout">
-                <!-- Left column: headline, description, and buttons -->
-                <div class="hero-copy">
-                    <p class="eyebrow">YOUR JAPANESE READING COMPANION</p>
-                    <h1>Read Japanese<br><span>with confidence.</span></h1>
-                    <p class="intro">Analyze Japanese texts, discover unfamiliar words, and improve your reading skills one word at a time.</p>
-                    <div class="actions">
-                        <a class="button primary" href="analyze.html">Get Started →</a>
-                        <a class="button secondary" href="#features">Learn More</a>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1" name="viewport" />
+        <meta content="Japanese Reading Aide: analyze readings and learn vocabulary." name="description" />
+        <title>Home | Japanese Reading Aide</title>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-bar">
+                <a class="brand" href="index.html"> ✿ Japanese Reading Aide </a>
+                <nav aria-label="Main navigation">
+                    <a aria-current="page" class="active" href="index.html"> Home </a>
+                    <a href="analyze.html"> Analyze </a>
+                    <a href="flashcards.html"> Study </a>
+                    <a href="readings.html"> My Readings </a>
+                    <a href="about.html"> About </a>
+                </nav>
+                <button aria-label="Switch to dark mode" class="theme-toggle" id="theme-toggle" type="button">☾</button>
+            </div>
+        </header>
+        <main>
+            <section class="home-hero container">
+                <div class="home-layout">
+                    <div class="hero-copy">
+                        <span class="pill"> Your Japanese reading companion </span>
+                        <h1>
+                            Read Japanese
+                            <br />
+                            <span> with confidence. </span>
+                        </h1>
+                        <p>
+                            Analyze Japanese texts, discover unfamiliar words, and improve your reading skills one word
+                            at a time.
+                        </p>
+                        <div class="actions">
+                            <a class="button primary" href="analyze.html"> Get Started → </a>
+                            <a class="button secondary" href="about.html"> Learn More </a>
+                        </div>
                     </div>
+                    <aside aria-label="Reading preview" class="card hero-preview">
+                        <p class="preview-title">📖 Reading Preview</p>
+                        <p class="sample-sentence" lang="ja">今日は図書館で日本語の本を読みました。</p>
+                        <div class="sample-word">
+                            <strong lang="ja"> 図書館 </strong>
+                            <p>としょかん · Library</p>
+                        </div>
+                        <button aria-expanded="false" class="button secondary" id="sample-meaning" type="button">
+                            Show meaning
+                        </button>
+                        <p hidden="" id="sample-detail">図書館 (としょかん) means “library.”</p>
+                    </aside>
                 </div>
-
-                <!-- Right column: example Japanese sentence and vocabulary -->
-                <div class="preview-card">
-                    <p class="preview-heading">📖 Reading Preview</p>
-                    <p class="japanese-sentence">今日は<span class="highlight">図書館</span>で日本語の本を読みました。</p>
-                    <!-- React renders a small interactive word card here. -->
-                    <div id="word-preview"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURES: Three cards explaining the main tools -->
-        <section class="features container" id="features">
-            <h2>What can you do?</h2>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <span class="feature-icon">📖</span>
-                    <h3>Analyze Text</h3>
-                    <p>Find unfamiliar words in Japanese passages.</p>
+            </section>
+            <section class="container feature-grid">
+                <article class="card">
+                    <h3>✎ Analyze</h3>
+                    <p>Paste Japanese text or upload a UTF-8 .txt file.</p>
                 </article>
-                <article class="feature-card">
-                    <span class="feature-icon">🌸</span>
-                    <h3>Save Vocabulary</h3>
-                    <p>Keep track of the words you want to learn.</p>
+                <article class="card">
+                    <h3>✿ Study</h3>
+                    <p>Review unfamiliar vocabulary with simple spaced-repetition flashcards.</p>
                 </article>
-                <article class="feature-card">
-                    <span class="feature-icon">✦</span>
-                    <h3>Study Flashcards</h3>
-                    <p>Practice new words at your own pace.</p>
+                <article class="card">
+                    <h3>↗ Track progress</h3>
+                    <p>See your vocabulary coverage update as you learn words.</p>
                 </article>
-            </div>
-        </section>
-
-        <!-- CLOSING: Encourage visitors to try the analyzer -->
-        <section class="closing">
-            <div class="container">
-                <h2>Ready to start reading?</h2>
-                <p>Small steps make a big difference.</p>
-                <a class="button primary" href="analyze.html">Start Reading →</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER: Short website tagline -->
-    <footer>
-        <p>Japanese Reading Aide · Read More. Understand More.</p>
-    </footer>
-</body>
+            </section>
+        </main>
+        <footer class="site-footer">Japanese Reading Aide · Read More. Understand More.</footer>
+        <script src="js/app.js"></script>
+        <script src="js/preview.js"></script>
+    </body>
 </html>
