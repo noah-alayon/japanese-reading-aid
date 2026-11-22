@@ -4,35 +4,81 @@
     <!-- Page settings and the single font used throughout the website. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze Japanese text and discover unfamiliar vocabulary.">
     <title>Analyze | Japanese Reading Aide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- React runs inside a normal JavaScript file. -->
-    <script src="js/theme.js" defer></script>
-    <script src="js/analyze.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
+    
 <body>
-    <!-- Reuse the same navigation as the homepage. -->
+    <!-- Site Header. -->
     <header class="site-header">
         <div class="container nav-bar">
             <a class="brand" href="index.html">✿ Japanese Reading Aide</a>
             <nav aria-label="Main navigation">
                 <a href="index.html">Home</a>
-                <a class="active" href="analyze.html" aria-current="page">Analyze</a>
+                <a href="analyze.html" class="active" aria-current="page">Analyze</a>
                 <a href="flashcards.html">Study</a>
                 <a href="readings.html">My Readings</a>
                 <a href="about.html">About</a>
             </nav>
-            <!-- Switch between light and dark mode on either page. -->
-            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">☾</button>
         </div>
     </header>
 
-    <!-- React inserts the upload form or the analysis results here. -->
-    <main class="analyze-main container">
-        <div id="analyze-root"></div>
-    </main>
+    <!-- Main Content. -->
+     <main class="analyze-page">
+        <div class="container">
+            <section class="analyze-heading">
+                <h1>Analyze a Japanese Reading</h1>
+                <p>Upload a file or paste Japanese text to see your vocabulary analysis.</p>
+            </section>
 
-    <footer><p>Japanese Reading Aide · Read More. Understand More.</p></footer>
+            <section class="analyze-container" aria-label="Reading analysis form">
+                <form id="analyze-form">
+                    <div class="analyze-tabs" role="group" aria-label="Reading input method">
+                        <button type="button" id="upload-tab" class="analyze-tab selected" aria-pressed="true" aria-controls="upload-panel">Upload File</button>
+                        <button type="button" id="paste-tab" class="analyze-tab" aria-pressed="false" aria-controls="paste-panel">Paste Text</button>
+                    </div>
+
+                    <div class="reading-title-field">
+                        <label for="title">Reading Title</label>
+                        <input type="text" id="title" maxlength="100" placeholder="Enter a title for your reading">
+                    </div>
+
+                    <div id="upload-panel" class="input-panel">
+                        <div id="drop-zone" class="upload-area">
+                            <div class="upload-icon" aria-hidden="true">✿</div>
+                            <p class="upload-message">Drag and drop a file here</p>
+                            <p class="upload-or">or</p>
+                            <label for="file" class="choose-file-button">Choose a File</label>
+                            <input type="file" id="file" accept=".txt,text/plain" class="file-input">
+                            <p id="file-name" class="file-name" aria-live="polite">No file selected</p>
+                            <p class="file-hint">Supports UTF-8 .txt files up to 1 MB</p>
+                        </div>
+                    </div>
+
+                    <div id="paste-panel" class="input-panel" hidden>
+                        <label for="text" class="visually-hidden">Japanese reading text</label>
+                        <textarea id="text" lang="ja" placeholder="今日は図書館で日本語の本を読みました。"></textarea>
+                    </div>
+
+                    <div class="analyze-submit">
+                        <button type="submit" id="submit" class="button primary analyze-button">Analyze Reading</button>
+                    </div>
+                    <p id="status" class="analyze-status" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </div>
+    </main>
+   
+    <!--Footer-->
+    <footer class="site-footer">Japanese Reading Aide · Read More. Understand More.</footer>
+    
+    <script src="js/app.js"></script>
 </body>
 </html>
