@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1" name="viewport" />
+        <meta content="Japanese Reading Aide: analyze readings and learn vocabulary." name="description" />
+        <title>Results | Japanese Reading Aide</title>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/app.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-bar">
+                <a class="brand" href="index.html"> ✿ Japanese Reading Aide </a>
+                <nav aria-label="Main navigation">
+                    <a href="index.html"> Home </a>
+                    <a href="analyze.html"> Analyze </a>
+                    <a href="flashcards.html"> Study </a>
+                    <a href="readings.html"> My Readings </a>
+                    <a href="about.html"> About </a>
+                </nav>
+                <button aria-label="Switch to dark mode" class="theme-toggle" id="theme-toggle" type="button">☾</button>
+            </div>
+        </header>
+        <main>
+            <div class="container page-main">
+                <div class="card empty" hidden="" id="empty">
+                    <h1>No reading selected</h1>
+                    <a class="button primary" href="analyze.html"> Analyze a reading </a>
+                </div>
+                <div id="content">
+                    <div class="page-heading">
+                        <h1 id="reading-title">Analysis Result</h1>
+                        <p>
+                            Vocabulary coverage estimates recognition of analyzed vocabulary occurrences, not full
+                            reading comprehension.
+                        </p>
+                    </div>
+                    <section class="card" style="margin-bottom: 20px">
+                        <div class="big-number" id="percent">—</div>
+                        <p class="stats" id="stats"></p>
+                        <div class="actions">
+                            <button class="button primary" id="save">Save to My Readings</button>
+                            <button class="button secondary" id="study">Study unfamiliar words →</button>
+                        </div>
+                        <p id="message" role="status"></p>
+                    </section>
+                    <section class="card" style="margin-bottom: 20px">
+                        <h2>Your reading</h2>
+                        <p class="subtle">
+                            Pink = unfamiliar · Green = known. Hover over words to see available meanings.
+                        </p>
+                        <div class="original" id="original" lang="ja"></div>
+                    </section>
+                    <section class="card">
+                        <h2>Vocabulary</h2>
+                        <p class="subtle">
+                            Check “Known” to update coverage immediately. Unknown words can become flashcards.
+                        </p>
+                        <div class="table-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Word</th>
+                                        <th>Reading</th>
+                                        <th>English</th>
+                                        <th>Count</th>
+                                        <th>Progress</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vocab-body"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer class="site-footer">Japanese Reading Aide · Read More. Understand More.</footer>
+        <script src="js/app.js"></script>
+        <script src="js/results.js"></script>
+    </body>
+</html>
