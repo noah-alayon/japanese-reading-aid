@@ -1,120 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Japanese Reading Aide</title>
-
-    <!--Styling Fonts + CSS-->
-    <link rel="stylesheet" href="./css/about.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!--Navigation Bar-->
-     <header class="site-header">
-        <div class="container nav-bar">
-
-            <a href="index.html" class="brand">
-                ✿ Japanese Reading Aide
-            </a>
-            <nav aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="analyze.html">Analyze</a>
-                <a href="flashcards.html">Study</a>
-                <a href="readings.html">My Readings</a>
-                <a href="about.html" class="active" aria-current="page">About</a>
-                <a href="login.html">Login</a>
-            </nav>
-            <!-- Dark Mode Button -->
-            <button
-                class="theme-toggle"
-                id="theme-toggle"
-                type="button"
-                aria-label="Toggle dark mode">
-                <span class="theme-icon">☾</span>
-            </button>
-        </div>
-    </header>
-
-    <!--Main Content-->
-    <main class="about-main">
-        <div class="container">
-            <!--Page Heading-->
-              <section class="about-heading">
-                <h1>About Japanese Reading Aide</h1>
-                <p>
-                    Helping Japanese learners improve their reading
-                    comprehension and expand their vocabulary.
-                </p>
-            </section>
-            
-        <!-- About Cards-->
-        <section class="about-grid">
-            <!--Mission-->
-          <article class="about-card">
-
-                    <h2>Our Mission</h2>
-
-                    <p>
-                        Japanese Reading Aide helps learners read
-                        Japanese texts with greater confidence while
-                        building their vocabulary.
-                    </p>
-
-             </article>
-
-            <!--Features-->
-               <article class="about-card">
-
-                    <h2>Key Features</h2>
-
-                    <ul>
-                        <li>Analyze Japanese text from files or pasted text</li>
-                        <li>Identify unfamiliar Japanese vocabulary</li>
-                        <li>View English vocabulary definitions</li>
-                        <li>Save vocabulary for flashcard practice</li>
-                    </ul>
-
-                </article>
-
-            <!--Who is this For?-->
-             <article class="about-card">
-
-                    <h2>Who Is This For?</h2>
-
-                    <p>
-                        Japanese Reading Aide is designed for students
-                        taking Japanese courses, self-learners, and
-                        anyone interested in improving their Japanese
-                        reading skills.
-                    </p>
-
-                </article>
-        <!--About this project-->
-            <article class="about-card">
-
-                    <h2>About This Project</h2>
-
-                    <p>
-                        Japanese Reading Aide is a college web
-                        development project designed to help
-                        Japanese learners understand unfamiliar
-                        vocabulary while reading.
-                    </p>
-
-                </article>
-            </section>
-        </div>
-    </main>
-
-    <!--Footer-->
-    <footer>
-        <p>Japanese Reading Aide</p>
-    </footer>
-    
-    <!--Script for dark mode-->
-    <script src="./js/theme.js"></script>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1" name="viewport" />
+        <meta content="Japanese Reading Aide: analyze readings and learn vocabulary." name="description" />
+        <title>About | Japanese Reading Aide</title>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/app.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-bar">
+                <a class="brand" href="index.html"> ✿ Japanese Reading Aide </a>
+                <nav aria-label="Main navigation">
+                    <a href="index.html"> Home </a>
+                    <a href="analyze.html"> Analyze </a>
+                    <a href="flashcards.html"> Study </a>
+                    <a href="readings.html"> My Readings </a>
+                    <a aria-current="page" class="active" href="about.html"> About </a>
+                </nav>
+                <button aria-label="Switch to dark mode" class="theme-toggle" id="theme-toggle" type="button">☾</button>
+            </div>
+        </header>
+        <main>
+            <div class="container page-main">
+                <div class="page-heading">
+                    <h1>About Japanese Reading Aide</h1>
+                    <p>Helping Japanese learners read with fewer interruptions and build vocabulary with confidence.</p>
+                </div>
+                <div class="about-grid">
+                    <article class="card">
+                        <h2>✿ Our Mission</h2>
+                        <p>
+                            Japanese uses multiple writing systems and does not usually separate words with spaces. We
+                            help learners find vocabulary and turn it into study material.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h2>Key Features</h2>
+                        <p>
+                            Paste or upload Japanese text, inspect vocabulary, save readings, generate flashcards, and
+                            track vocabulary coverage.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h2>Who Is This For?</h2>
+                        <p>Japanese language learners, including students studying Japanese at Hunter College.</p>
+                    </article>
+                    <article class="card">
+                        <h2>About This Project</h2>
+                        <p>
+                            Created as a student web application project. This demonstration stores readings and
+                            progress locally in your browser.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <footer class="site-footer">Japanese Reading Aide · Read More. Understand More.</footer>
+        <script src="js/app.js"></script>
+    </body>
 </html>
